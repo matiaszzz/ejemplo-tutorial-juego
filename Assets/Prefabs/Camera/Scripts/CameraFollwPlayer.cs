@@ -7,7 +7,7 @@ public class CameraFollwPlayer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        offset = new Vector3(0, 1, -2.2f);
+        offset = new Vector3(0, 2, -3f);
         playerMovement = Object.FindFirstObjectByType<PlayerMovement>();
     }
 
