@@ -26,12 +26,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        forceToApply = new Vector3(0, 0, 5);
+        forceToApply = new Vector3(0, 0, 5f);
         timeSinceLastForce = 0f;
         intervalTime = 2f; // Apply force every 2 seconds
         player = new Player(10f, 10f);
-        //SetMovementStrategy(new SmoothMovement());
-        SetMovementStrategy(new AcelerateMovement());
 
     }
 
@@ -40,14 +38,11 @@ public class PlayerMovement : MonoBehaviour
         this.movementStrategy = movementStrategy;
     }
 
-    private void Update()
-    {
-        MovePlayer();
-    }
+    
 
-    public void MovePlayer()
+    public void MovePlayer(float input)
     {
-        movementStrategy.Move(transform, player);
+        movementStrategy.Move(transform, player, input);
     }
 
     private void FixedUpdate()
